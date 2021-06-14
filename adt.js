@@ -9,7 +9,7 @@ const Nothing = () => construct(Maybe, p => p.Nothing())
 const Just = x => construct(Maybe, p => p.Just(x))
 
 // catamorphism for Maybe
-const maybe = (z, f) => m => m.match({ Nothing:() =>  z, Just:(x) => f(x) })
+const maybe = (z, f) => m => m.match({ Nothing:() => z, Just:(x) => f(x) })
 
 
 const List = {}
