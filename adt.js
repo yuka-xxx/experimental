@@ -1,6 +1,6 @@
 
-const construct = (t, f) => Object.assign(Object.create(t), { match: f })
-
+const comp = (f, g) => x => f(g(x))
+const construct = (t, f) => comp(Object.seal, Object.freeze)(Object.assign(Object.create(t), { match: f }))
 
 const Maybe = {}
 
